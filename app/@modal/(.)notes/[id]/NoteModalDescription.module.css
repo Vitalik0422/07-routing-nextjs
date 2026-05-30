@@ -1,0 +1,47 @@
+.modalCloseBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #3483f8;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid #235297;
+  }
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 1px;
+    background-color: #3483f8;
+  }
+
+  &::before {
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.noteModalThumb {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.noteModalTitle {
+  font-size: 20px;
+}
+
+.noteModalContent {
+  font-size: 14px;
+  color: grey;
+}

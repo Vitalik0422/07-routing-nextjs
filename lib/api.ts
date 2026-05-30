@@ -1,4 +1,4 @@
-import { Note, NoteFormData } from '@/types/note';
+import { Note, NoteFormData, TagType } from '@/types/note';
 import axios from 'axios';
 
 axios.defaults.headers.Authorization = `Bearer ${process.env.NEXT_PUBLIC_NOTEHUB_TOKEN}`;
@@ -7,20 +7,31 @@ axios.defaults.baseURL = 'https://notehub-public.goit.study/api/';
 interface Notes {
   notes: Note[];
   totalPages: number;
+  tag: TagType;
 }
 
 export const fetchNotes = async (
   search?: string,
   page = 1,
   perPage = 12,
+  tag?: TagType,
 ): Promise<Notes> => {
-  const params: { page: number; perPage: number; search?: string } = {
+  const params: {
+    page: number;
+    perPage: number;
+    search?: string;
+    tag?: TagType;
+  } = {
     page,
     perPage,
   };
 
   if (search) {
     params.search = search;
+  }
+
+  if (tag) {
+    params.tag = tag;
   }
 
   const response = await axios.get<Notes>(`/notes`, {
@@ -31,6 +42,15 @@ export const fetchNotes = async (
 
 export const fetchNoteById = async (id: string) => {
   const response = await axios.get<Note>(`/notes/${id}`);
+  return response.data;
+};
+
+export const fetchNotesByTag = async (tag: string): Promise<Notes> => {
+  const params: { tag?: string } = { tag: tag };
+  const response = await axios.get<Notes>('/notes/', {
+    params,
+  });
+
   return response.data;
 };
 

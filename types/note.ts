@@ -1,4 +1,4 @@
-type TagType = 'Work' | 'Personal' | 'Meeting' | 'Shopping' | 'Todo';
+export type TagType = 'Work' | 'Personal' | 'Meeting' | 'Shopping' | 'Todo';
 
 export interface Note {
   id: string;

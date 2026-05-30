@@ -1,3 +1,4 @@
+'use client';
 import { ErrorMessage, Field, Form, Formik, type FormikHelpers } from 'formik';
 import css from './NoteForm.module.css';
 
@@ -48,7 +49,7 @@ const NoteForm = ({ onClose }: NoteFormProps) => {
       validationSchema={NoteSchema}
       onSubmit={handleCreateNote}
     >
-      {({ errors, touched, dirty, isValid, isSubmitting }) => (
+      {({ dirty, isValid, isSubmitting }) => (
         <Form className={css.form}>
           <div className={css.formGroup}>
             <label htmlFor="title">Title</label>
