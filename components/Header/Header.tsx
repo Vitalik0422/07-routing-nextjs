@@ -1,8 +1,5 @@
 import css from './Header.module.css';
-// import SearchBox from '../SearchBox/SearchBox';
 import Link from 'next/link';
-import NoteForm from '../NoteForm/NoteForm';
-import Modal from '../Modal/Modal';
 
 const Header = () => {
   return (
@@ -10,7 +7,9 @@ const Header = () => {
       <Link href="/" aria-label="Home">
         NoteHub
       </Link>
-      <Link href="/notes/create">Створити нотатку +</Link>
+      <Link href="/notes/create" className={css.createNoteLinkBtn}>
+        Create note +
+      </Link>
       <nav aria-label="Main Navigation">
         <ul className={css.navigation}>
           <li>

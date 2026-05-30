@@ -17,6 +17,15 @@
 .header a:hover {
   color: #ddd;
 }
+.createNoteLinkBtn {
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 10px;
+
+  &:hover {
+    border: 1px solid #ddd;
+  }
+}
 
 .navigation {
   list-style-type: none;
