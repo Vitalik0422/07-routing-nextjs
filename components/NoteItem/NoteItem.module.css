@@ -68,6 +68,10 @@
   align-items: center;
   margin-top: auto;
 }
+.footerBtnThumb {
+  display: flex;
+  gap: 10px;
+}
 
 .tag {
   display: inline-block;

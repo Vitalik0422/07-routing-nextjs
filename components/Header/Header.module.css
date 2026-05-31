@@ -44,3 +44,31 @@
 .navigation li a:hover {
   color: #ddd;
 }
+
+.noteBar {
+  display: flex;
+  gap: 10px;
+}
+.searchBtn {
+  display: flex;
+  gap: 10px;
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: width 250ms ease;
+
+  &:hover {
+    border: 1px solid #ddd;
+  }
+  &:active {
+    width: 0px;
+    overflow: hidden;
+    padding: 0;
+  }
+}
+
+.searchBtnLabel {
+  font-size: 1.5rem;
+  font-weight: bold;
+}

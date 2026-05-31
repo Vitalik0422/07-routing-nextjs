@@ -20,12 +20,14 @@ const NoteItem = ({
       <p className={css.content}>{content}</p>
       <div className={css.footer}>
         <span className={css.tag}>{tag}</span>
-        <Link href={`/notes/${id}`} className={css.viewButton}>
-          View Details
-        </Link>
-        <button className={css.button} onClick={handleDeleteClick}>
-          Delete
-        </button>
+        <div className={css.footerBtnThumb}>
+          <Link href={`/notes/${id}`} className={css.viewButton}>
+            View Details
+          </Link>
+          <button className={css.button} onClick={handleDeleteClick}>
+            Delete
+          </button>
+        </div>
       </div>
     </>
   );

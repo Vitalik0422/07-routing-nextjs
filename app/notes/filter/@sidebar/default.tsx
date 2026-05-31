@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import css from './SideBar.module.css';
 
-const NotesSidebar = async () => {
+const NotesSidebar = () => {
   return (
     <ul className={css.menuList}>
       <li className={css.menuItem}>

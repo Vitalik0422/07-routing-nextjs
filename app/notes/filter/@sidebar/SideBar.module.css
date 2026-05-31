@@ -21,3 +21,6 @@
   background-color: #444;
   color: #ddd;
 }
+.icon {
+  cursor: pointer;
+}
