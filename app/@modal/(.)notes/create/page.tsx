@@ -1,7 +1,8 @@
-import React from 'react';
 import NoteCreateModal from './NoteCreateModal';
 
-const NoteCreate = () => {
+export const dynamic = 'force-dynamic';
+
+const NoteCreate = async () => {
   return <NoteCreateModal />;
 };
 

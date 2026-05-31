@@ -1,7 +1,6 @@
 //styles
 'use client';
 import css from './Modal.module.css';
-
 import { createPortal } from 'react-dom';
 import React, { useEffect, type MouseEvent } from 'react';
 
@@ -26,7 +25,6 @@ const Modal = ({ onClose, children }: ModalProps) => {
   const handleBackDropClick = (e: MouseEvent<HTMLDivElement>) => {
     if (e.currentTarget === e.target) onClose();
   };
-
   return createPortal(
     <div
       className={css.backdrop}
