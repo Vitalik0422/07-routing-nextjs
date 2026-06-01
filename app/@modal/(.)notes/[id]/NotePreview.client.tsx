@@ -10,17 +10,26 @@ const NoteModalDescriptionClient = () => {
   const { id } = useParams<{ id: string }>();
   const router = useRouter();
 
-  const { data: note } = useQuery({
+  const {
+    data: note,
+    isLoading,
+    error,
+  } = useQuery({
     queryKey: ['note', id],
     queryFn: () => fetchNoteById(id),
     retry: false,
     throwOnError: true,
     enabled: Boolean(id),
+    refetchOnMount: false,
   });
 
   const handleCloseModal = () => {
     router.back();
   };
+
+  if (isLoading) return <p>Loading...</p>;
+
+  if (error || !note) return <p>Some error..</p>;
 
   return (
     <Modal onClose={handleCloseModal}>

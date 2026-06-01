@@ -7,7 +7,6 @@ axios.defaults.baseURL = 'https://notehub-public.goit.study/api/';
 interface Notes {
   notes: Note[];
   totalPages: number;
-  tag: TagType;
 }
 
 export const fetchNotes = async (
@@ -42,15 +41,6 @@ export const fetchNotes = async (
 
 export const fetchNoteById = async (id: string) => {
   const response = await axios.get<Note>(`/notes/${id}`);
-  return response.data;
-};
-
-export const fetchNotesByTag = async (tag: string): Promise<Notes> => {
-  const params: { tag?: string } = { tag: tag };
-  const response = await axios.get<Notes>('/notes/', {
-    params,
-  });
-
   return response.data;
 };
 

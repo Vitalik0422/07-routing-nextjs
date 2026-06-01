@@ -11,7 +11,6 @@ type Props = {
 };
 
 const NotePreview = async ({ params }: Props) => {
-  console.log('work');
   const { id } = await params;
   const queryClient = new QueryClient();
 

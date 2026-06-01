@@ -8,13 +8,13 @@
   padding: 100px;
 }
 
-.notFountTitle {
+.notFoundTitle {
   font-size: 100px;
   color: grey;
   letter-spacing: -5px;
 }
 
-.notFountDescription {
+.notFoundDescription {
   font-size: 20px;
   color: rgb(34, 33, 33);
 }

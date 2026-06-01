@@ -1,5 +1,5 @@
 const NoteModal = () => {
-  return;
+  return null;
 };
 
 export default NoteModal;

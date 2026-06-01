@@ -13,19 +13,18 @@ interface FilterNotesProps {
 
 const Page = async ({ params }: FilterNotesProps) => {
   const { slug } = await params;
+  const tag = slug[0] as TagType;
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery({
-    queryKey: ['notes', { page: 1, slug: slug[0], search: '' }],
+    queryKey: ['notes', { page: 1, slug: tag, search: '' }],
     queryFn: () =>
-      slug[0] === 'all'
-        ? fetchNotes()
-        : fetchNotes('', 1, 12, slug[0] as TagType),
+      slug[0] === 'all' ? fetchNotes() : fetchNotes('', 1, 12, tag),
   });
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
-      <NotesFilterListClient />
+      <NotesFilterListClient tag={tag} />
     </HydrationBoundary>
   );
 };
